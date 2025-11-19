@@ -21,351 +21,532 @@
 
 Toko GenZ is a full-featured electronic store management system built with modern PHP and MySQL. It provides everything you need to run a successful retail business: from inventory tracking and point-of-sale to detailed financial reporting and analytics.
 
-## ✨ Fitur Utama
 
-### 🔐 Autentikasi
-- Login dengan username & password
-- Session management yang aman
-- Proteksi semua halaman dengan middleware
+## ✨ Features
 
-### 📊 Dashboard
-- Statistik penjualan real-time
-- Grafik penjualan 7 hari terakhir
-- Monitoring stok barang
-- Transaksi terbaru
-- Produk terlaris
+<table>
+<tr>
+<td width="50%">
 
-### 📦 Manajemen Barang
-- CRUD (Create, Read, Update, Delete) barang
-- Kategori produk elektronik
-- Generate kode barang otomatis
-- Upload spesifikasi produk
-- Manajemen harga beli & jual
-- Status barang (aktif/nonaktif)
+### 🔐 Authentication & Security
+- Secure login with session management
+- Password hashing & encryption
+- SQL injection protection
+- XSS & CSRF protection
+- Role-based access control ready
 
-### 📊 Stok Barang
-- Monitoring stok real-time
-- Notifikasi stok menipis
-- Tambah/kurangi stok
-- Riwayat pergerakan stok
-- Multi satuan (unit, pcs, box, set)
+### 📊 Smart Dashboard
+- Real-time sales statistics
+- 7-day sales trend charts
+- Live inventory monitoring
+- Recent transactions feed
+- Best-selling products analytics
 
-### 💰 Point of Sale (POS)
-- Interface kasir yang modern & responsif
-- Pencarian produk cepat
-- Keranjang belanja interaktif
-- Perhitungan pajak otomatis (5%)
-- Multiple metode pembayaran
-- Perhitungan kembalian otomatis
-- Generate faktur otomatis
+### 📦 Inventory Management
+- Complete CRUD operations
+- Auto-generated product codes
+- Category-based organization
+- Buy/sell price tracking
+- Product status management
+- Stock level monitoring
 
-### 🧾 Transaksi
-- Riwayat transaksi lengkap
-- Filter berdasarkan periode
-- Detail transaksi
-- Cetak ulang faktur
-- Status transaksi
+</td>
+<td width="50%">
 
-### 📈 Laporan Rugi Laba
-- Laporan keuangan lengkap
-- Perhitungan HPP (Harga Pokok Penjualan)
-- Laba kotor & laba bersih
-- Margin keuntungan
-- Analisis per kategori
-- Top 10 produk terlaris
-- Filter periode (hari, minggu, bulan, tahun, custom)
-- Export/cetak laporan
+### 💳 Point of Sale (POS)
+- Modern, responsive interface
+- Quick product search
+- Interactive shopping cart
+- Automatic tax calculation (5%)
+- Multiple payment methods
+- Auto change calculation
+- Instant receipt generation
 
-### ⚙️ Pengaturan
-- Manajemen profil user
-- Ganti password
-- Pengaturan informasi toko
-- Konfigurasi pajak
-- Customizable footer faktur
+### 📈 Financial Reporting
+- Comprehensive profit/loss reports
+- COGS (Cost of Goods Sold) calculation
+- Gross & net profit analysis
+- Profit margin tracking
+- Category-wise breakdown
+- Flexible date filtering
+- Printable reports
 
-## 🚀 Teknologi yang Digunakan
+### ⚙️ System Settings
+- User profile management
+- Password change
+- Store configuration
+- Tax settings customization
+- Receipt footer customization
 
-- **Backend**: PHP 8.0+
-- **Database**: MySQL 5.7+
-- **Frontend**: 
-  - HTML5
-  - CSS3
-  - JavaScript (Vanilla)
-  - Bootstrap 5.3.2
-  - Font Awesome 6.4.2
-  - Chart.js
-  - DataTables
-- **Server**: XAMPP (Apache + MySQL)
+</td>
+</tr>
+</table>
 
-## 📋 Persyaratan Sistem
+---
 
-- PHP >= 8.0
-- MySQL >= 5.7
-- Apache Web Server
-- XAMPP/WAMP/LAMP
-- Web Browser (Chrome, Firefox, Safari, Edge)
+## 🚀 Tech Stack
 
-## 🔧 Instalasi
+<div align="center">
 
-### 1. Clone atau Download Project
+| Category | Technologies |
+|----------|-------------|
+| **Backend** | ![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=flat&logo=php&logoColor=white) |
+| **Database** | ![MySQL](https://img.shields.io/badge/MySQL-5.7+-4479A1?style=flat&logo=mysql&logoColor=white) |
+| **Frontend** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) |
+| **Framework** | ![Bootstrap](https://img.shields.io/badge/Bootstrap_5.3-7952B3?style=flat&logo=bootstrap&logoColor=white) |
+| **Libraries** | Chart.js • DataTables • Font Awesome 6.4 |
+| **Server** | ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat&logo=apache&logoColor=white) XAMPP Stack |
+
+</div>
+
+---
+
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
 
 ```bash
+✓ PHP >= 8.0
+✓ MySQL >= 5.7
+✓ Apache Web Server
+✓ XAMPP/WAMP/LAMP Stack
+✓ Modern Web Browser (Chrome, Firefox, Safari, Edge)
+```
+
+---
+
+## 🔧 Installation
+
+### Quick Start
+
+```bash
+# 1️⃣ Navigate to your XAMPP htdocs directory
 cd /Applications/XAMPP/xamppfiles/htdocs/
-# Project sudah ada di folder Pasya
+
+# 2️⃣ Project is already in the Pasya folder
+# If cloning from repository:
+# git clone <repository-url> Pasya
 ```
 
-### 2. Setup Database
+### Database Setup
 
-1. Buka **phpMyAdmin** (http://localhost/phpmyadmin)
-2. Buat database baru dengan nama `toko_genz`
-3. Import file `database.sql`:
-   - Klik database `toko_genz`
-   - Pilih tab **Import**
-   - Browse file `database.sql`
-   - Klik **Go**
-
-### 3. Konfigurasi Database
-
-File `config.php` sudah dikonfigurasi dengan default XAMPP:
-
-```php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'toko_genz');
-```
-
-Jika menggunakan konfigurasi berbeda, edit file `config.php`.
-
-### 4. Jalankan Aplikasi
-
-1. Start XAMPP:
-   - Buka XAMPP Control Panel
-   - Start **Apache**
-   - Start **MySQL**
-
-2. Akses aplikasi di browser:
+1. **Start XAMPP Services**
    ```
-   http://localhost/Pasya/login.php
+   Open XAMPP Control Panel
+   → Start Apache
+   → Start MySQL
    ```
 
-## 🔑 Kredensial Login
+2. **Create Database**
+   - Open **phpMyAdmin**: `http://localhost/phpmyadmin`
+   - Create new database: `toko_genz`
+   - Import `database.sql` file:
+     - Select database `toko_genz`
+     - Click **Import** tab
+     - Choose file `database.sql`
+     - Click **Go**
+
+3. **Configure Database Connection**
+   
+   File `config.php` is pre-configured for XAMPP defaults:
+   ```php
+   define('DB_HOST', 'localhost');
+   define('DB_USER', 'root');
+   define('DB_PASS', '');
+   define('DB_NAME', 'toko_genz');
+   ```
+   *Modify if using different credentials*
+
+### Launch Application
 
 ```
-Username: pasyaganteng
-Password: pasya17
+🌐 Browser: http://localhost/Pasya/login.php
 ```
 
-## 📁 Struktur Folder
+### Default Credentials
+
+```
+👤 Username: pasyaganteng
+🔑 Password: pasya17
+```
+
+> ⚠️ **Important**: Change default credentials after first login for security
+
+---
+
+
+## 📁 Project Structure
 
 ```
 Pasya/
-├── config.php                  # Konfigurasi database & helper functions
-├── database.sql                # File SQL untuk import database
-├── login.php                   # Halaman login
-├── logout.php                  # Proses logout
-├── header.php                  # Template header & sidebar
-├── footer.php                  # Template footer & scripts
-├── dashboard.php               # Dashboard utama
-├── barang.php                  # Manajemen barang
-├── proses_barang.php          # Proses CRUD barang
-├── stok.php                    # Monitoring & update stok
-├── proses_stok.php            # Proses update stok
-├── get_riwayat_stok.php       # API riwayat stok
-├── penjualan.php              # Point of Sale (POS)
-├── proses_penjualan.php       # Proses transaksi penjualan
-├── transaksi.php              # Riwayat transaksi
-├── get_detail_transaksi.php   # API detail transaksi
-├── cetak_faktur.php           # Cetak faktur penjualan
-├── laporan.php                # Laporan rugi laba
-├── pengaturan.php             # Pengaturan sistem
-├── proses_pengaturan.php      # Proses update pengaturan
-└── README.md                   # Dokumentasi
+│
+├── 📄 Core Files
+│   ├── config.php                  # Database config & helper functions
+│   ├── database.sql                # SQL import file
+│   └── README.md                   # Documentation
+│
+├── 🔐 Authentication
+│   ├── login.php                   # Login page
+│   └── logout.php                  # Logout handler
+│
+├── 🎨 Templates
+│   ├── header.php                  # Header & sidebar template
+│   └── footer.php                  # Footer & scripts template
+│
+├── 📊 Main Modules
+│   ├── dashboard.php               # Main dashboard
+│   ├── barang.php                  # Product management
+│   ├── stok.php                    # Stock monitoring
+│   ├── penjualan.php              # Point of Sale (POS)
+│   ├── transaksi.php              # Transaction history
+│   ├── laporan.php                # Profit/loss reports
+│   └── pengaturan.php             # System settings
+│
+├── ⚙️ Processing Scripts
+│   ├── proses_barang.php          # Product CRUD handler
+│   ├── proses_stok.php            # Stock update handler
+│   ├── proses_penjualan.php       # Sales processing
+│   └── proses_pengaturan.php      # Settings update handler
+│
+├── 🔌 API Endpoints
+│   ├── get_detail_transaksi.php   # Transaction details API
+│   ├── get_riwayat_stok.php       # Stock history API
+│   └── cetak_faktur.php           # Receipt printing
+│
+└── 🎨 Assets
+    └── css/
+        ├── style.css               # Main stylesheet
+        ├── login.css               # Login page styles
+        └── landing.css             # Landing page styles
 ```
 
-## 📊 Database Schema
+---
 
-### Tabel Utama:
+## 🗄️ Database Schema
 
-1. **users** - Data pengguna sistem
-2. **kategori** - Kategori produk
-3. **barang** - Master data barang
-4. **transaksi** - Header transaksi penjualan
-5. **detail_transaksi** - Detail item transaksi
-6. **riwayat_stok** - History pergerakan stok
-7. **pengaturan_toko** - Konfigurasi toko
+<details>
+<summary><b>Click to expand database structure</b></summary>
 
-## 🎨 Fitur UI/UX
+### Core Tables
 
-- ✅ Desain modern dengan gradient colors
-- ✅ Fully responsive (mobile, tablet, desktop)
-- ✅ Dark sidebar dengan light content
-- ✅ Interactive cards dengan hover effects
-- ✅ Smooth animations
-- ✅ Icon-based navigation
-- ✅ DataTables untuk tabel interaktif
-- ✅ Modal dialogs
-- ✅ Real-time calculations
-- ✅ Toast notifications
-- ✅ Print-friendly layouts
+| Table | Description |
+|-------|-------------|
+| `users` | User accounts and authentication |
+| `kategori` | Product categories |
+| `barang` | Product master data |
+| `transaksi` | Sales transaction headers |
+| `detail_transaksi` | Transaction line items |
+| `riwayat_stok` | Stock movement history |
+| `pengaturan_toko` | Store configuration settings |
 
-## 📱 Responsive Design
+### Sample Data Included
 
-Aplikasi telah dioptimasi untuk berbagai ukuran layar:
+- ✅ 1 Admin user account
+- ✅ 10 Electronic product categories
+- ✅ 10 Sample products
+- ✅ Default store settings
 
-- 📱 **Mobile** (< 768px)
-- 📱 **Tablet** (768px - 1024px)
-- 💻 **Desktop** (> 1024px)
+</details>
 
-## 🔒 Keamanan
+---
 
-- ✅ Password hashing dengan `password_hash()`
-- ✅ Prepared statements untuk query (mencegah SQL Injection)
-- ✅ Input sanitization dengan `clean_input()`
-- ✅ Session-based authentication
-- ✅ CSRF protection ready
-- ✅ XSS protection dengan `htmlspecialchars()`
 
-## 📈 Fitur Canggih
+## 🎨 UI/UX Highlights
 
-### 1. Perhitungan Otomatis
-- Subtotal per item
-- Total transaksi
-- Pajak (customizable %)
-- Kembalian
-- HPP (Harga Pokok Penjualan)
-- Laba kotor & bersih
-- Margin keuntungan
+<div align="center">
 
-### 2. Reporting
-- Grafik penjualan
-- Top produk
-- Analisis kategori
-- Filter periode flexible
-- Export ke print
+| Feature | Description |
+|---------|-------------|
+| 🎨 **Modern Design** | Gradient colors & contemporary aesthetics |
+| 📱 **Fully Responsive** | Optimized for mobile, tablet & desktop |
+| 🌗 **Smart Contrast** | Dark sidebar with light content area |
+| ✨ **Smooth Animations** | Hover effects & transitions |
+| 🎯 **Icon-Based Nav** | Intuitive Font Awesome icons |
+| 📊 **Interactive Tables** | DataTables with search & pagination |
+| 🔔 **Toast Notifications** | Real-time feedback system |
+| 🖨️ **Print-Friendly** | Optimized layouts for printing |
 
-### 3. Inventory Management
-- Auto-update stok saat penjualan
-- Notifikasi stok minimum
-- Riwayat lengkap
-- Multiple warehouse ready
+</div>
 
-## 🎯 Cara Penggunaan
+### Responsive Breakpoints
 
-### Input Barang Baru
-1. Buka menu **Data Barang**
-2. Klik tombol **+ Tambah Barang**
-3. Isi form (kode auto-generate)
-4. Klik **Simpan**
+```css
+📱 Mobile    : < 768px
+📱 Tablet    : 768px - 1024px
+💻 Desktop   : > 1024px
+```
 
-### Proses Penjualan
-1. Buka menu **Penjualan (POS)**
-2. Klik produk untuk menambah ke keranjang
-3. Atur quantity sesuai kebutuhan
-4. Pilih metode pembayaran
-5. Input uang bayar
-6. Klik **Proses Transaksi**
-7. Faktur otomatis tercetak
+---
 
-### Lihat Laporan
-1. Buka menu **Laporan Rugi Laba**
-2. Pilih periode (hari ini, minggu ini, bulan ini, custom)
-3. Klik **Tampilkan**
-4. Klik **Cetak** untuk print
+## 🔒 Security Features
+
+```
+✓ Password Hashing        → BCrypt algorithm
+✓ SQL Injection Prevention → Prepared statements
+✓ XSS Protection          → htmlspecialchars()
+✓ Input Sanitization      → clean_input() helper
+✓ Session Management      → Secure session handling
+✓ CSRF Protection Ready   → Token-based validation
+```
+
+---
+
+
+## 💡 Usage
+
+### Adding New Products
+
+```
+1. Navigate to 📦 Data Barang
+2. Click ➕ Tambah Barang button
+3. Fill in product details (code auto-generated)
+4. Click 💾 Simpan
+```
+
+### Processing Sales
+
+```
+1. Open 💳 Penjualan (POS)
+2. Click products to add to cart
+3. Adjust quantities as needed
+4. Select payment method
+5. Enter payment amount
+6. Click ✅ Proses Transaksi
+7. Receipt prints automatically
+```
+
+### Viewing Reports
+
+```
+1. Access 📈 Laporan Rugi Laba
+2. Select period (today, this week, this month, custom)
+3. Click 📊 Tampilkan
+4. Click 🖨️ Cetak to print report
+```
+
+---
+
+## 🚀 Advanced Features
+
+<table>
+<tr>
+<td width="33%">
+
+### 🧮 Auto Calculations
+- Item subtotals
+- Transaction totals
+- Tax computation
+- Change calculation
+- COGS tracking
+- Gross & net profit
+- Margin percentages
+
+</td>
+<td width="33%">
+
+### 📊 Reporting
+- Sales trend charts
+- Top products ranking
+- Category analysis
+- Flexible date filters
+- Print-ready formats
+- Real-time updates
+- Visual dashboards
+
+</td>
+<td width="33%">
+
+### 📦 Inventory
+- Auto stock updates
+- Low stock alerts
+- Complete history
+- Multiple units
+- Multi-warehouse ready
+- Batch tracking
+- Expiry management ready
+
+</td>
+</tr>
+</table>
+
+---
+
 
 ## 🐛 Troubleshooting
 
-### Database Connection Error
+<details>
+<summary><b>❌ Database Connection Error</b></summary>
+
+**Error Message:**
 ```
 Error: Koneksi gagal
 ```
-**Solusi**: 
-- Pastikan MySQL sudah running di XAMPP
-- Cek kredensial database di `config.php`
-- Pastikan database `toko_genz` sudah dibuat
 
-### Blank Page
-**Solusi**:
-- Enable error reporting di `php.ini`
-- Cek Apache error log
-- Pastikan PHP >= 8.0
+**Solutions:**
+1. Ensure MySQL is running in XAMPP Control Panel
+2. Verify database credentials in `config.php`
+3. Confirm `toko_genz` database exists
+4. Check MySQL port (default: 3306)
 
-### Session Issues
-**Solusi**:
-- Hapus cookies browser
-- Restart browser
-- Cek folder session PHP writable
+</details>
 
-## 📝 Data Sample
+<details>
+<summary><b>⚪ Blank/White Page</b></summary>
 
-Database sudah dilengkapi dengan data sample:
-- ✅ 1 User admin
-- ✅ 10 Kategori elektronik
-- ✅ 10 Produk sample
-- ✅ Pengaturan toko default
+**Solutions:**
+1. Enable error reporting in `php.ini`:
+   ```ini
+   display_errors = On
+   error_reporting = E_ALL
+   ```
+2. Check Apache error logs
+3. Verify PHP version >= 8.0
+4. Clear browser cache
 
-## 🔄 Update & Maintenance
+</details>
+
+<details>
+<summary><b>🔐 Session Issues</b></summary>
+
+**Solutions:**
+1. Clear browser cookies
+2. Restart browser completely
+3. Check PHP session folder permissions
+4. Verify `session_start()` in code
+
+</details>
+
+<details>
+<summary><b>📊 DataTables Not Working</b></summary>
+
+**Solutions:**
+1. Check browser console for JavaScript errors
+2. Verify jQuery is loaded before DataTables
+3. Clear browser cache
+4. Check internet connection (CDN dependencies)
+
+</details>
+
+---
+
+## 💾 Backup & Restore
 
 ### Backup Database
+
+**Via phpMyAdmin:**
+```
+1. Select toko_genz database
+2. Click Export tab
+3. Choose Quick export method
+4. Click Go
+```
+
+**Via Command Line:**
 ```bash
-# Via phpMyAdmin: Export > toko_genz > Go
-# Via command line:
-mysqldump -u root toko_genz > backup.sql
+mysqldump -u root toko_genz > backup_$(date +%Y%m%d).sql
 ```
 
 ### Restore Database
-```bash
-mysql -u root toko_genz < backup.sql
+
+**Via phpMyAdmin:**
+```
+1. Select toko_genz database
+2. Click Import tab
+3. Choose your backup file
+4. Click Go
 ```
 
-## 🤝 Kontribusi
+**Via Command Line:**
+```bash
+mysql -u root toko_genz < backup_20251119.sql
+```
 
-Aplikasi ini dibuat oleh developer fullstack dengan fokus pada:
-- Clean code
-- Best practices
-- User experience
-- Performance
-- Security
+---
 
-## 📞 Support
 
-Jika ada pertanyaan atau masalah, silakan hubungi tim developer.
+## 🗺️ Roadmap
+
+### 🚧 Upcoming Features
+
+- [ ] **Multi-user & Role Management** - Admin, cashier, manager roles
+- [ ] **Barcode Scanner Integration** - Quick product lookup
+- [ ] **PDF & Excel Export** - Advanced report exports
+- [ ] **Email Notifications** - Transaction receipts via email
+- [ ] **SMS Gateway** - Order notifications & alerts
+- [ ] **Customer Management** - CRM functionality
+- [ ] **Loyalty Program** - Points & rewards system
+- [ ] **REST API** - Mobile app integration
+- [ ] **Multi-Store Support** - Branch management
+- [ ] **Advanced Analytics** - AI-powered insights
+- [ ] **Dark Mode** - UI theme switching
+- [ ] **Multilingual Support** - i18n implementation
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! This project follows best practices:
+
+- ✅ Clean, readable code
+- ✅ PSR-12 coding standards
+- ✅ Comprehensive comments
+- ✅ Security-first approach
+- ✅ User-centric design
+- ✅ Performance optimization
+
+---
 
 ## 📄 License
 
-MIT License - Bebas digunakan untuk keperluan komersial maupun non-komersial.
+This project is licensed under the **MIT License** - free for commercial and non-commercial use.
 
-## 🎉 Fitur Mendatang (Roadmap)
-
-- [ ] Multi-user dengan role management
-- [ ] Barcode scanner integration
-- [ ] Export laporan ke PDF & Excel
-- [ ] Email notification
-- [ ] SMS gateway
-- [ ] Customer management
-- [ ] Loyalty program
-- [ ] API REST untuk mobile app
-- [ ] Multi-store/cabang
-- [ ] Dashboard analytics advanced
-
----
-
-## 🚀 Quick Start Guide
-
-```bash
-# 1. Start XAMPP
-# 2. Import database.sql ke phpMyAdmin
-# 3. Akses http://localhost/Pasya/login.php
-# 4. Login dengan username: pasyaganteng, password: pasya17
-# 5. Selamat menggunakan! 🎉
+```
+MIT License - Copyright (c) 2025 Toko GenZ
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction.
 ```
 
 ---
 
-**Developed with ❤️ for Toko GenZ**
+## 📞 Support
 
-**Version**: 1.0.0  
-**Last Updated**: November 2025  
-**Framework**: PHP Native + Bootstrap 5  
-**Database**: MySQL 5.7+
+Need help? Have questions?
+
+- 📧 **Email**: support@tokogenz.com
+- 💬 **Discord**: [Join our community](https://discord.gg/tokogenz)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/tokogenz/issues)
+- 📚 **Docs**: [Full Documentation](https://docs.tokogenz.com)
+
+---
+
+<div align="center">
+
+## ⚡ Quick Start Command
+
+```bash
+# Complete setup in one go
+1. Start XAMPP (Apache + MySQL)
+2. Import database.sql via phpMyAdmin
+3. Navigate to http://localhost/Pasya/login.php
+4. Login with: pasyaganteng / pasya17
+5. Start selling! 🎉
+```
+
+---
+
+### 🌟 Star this project if you find it helpful!
+
+**Built with ❤️ for modern retail businesses**
+
+---
+
+**Version** `1.0.0` • **Updated** November 2025 • **Stack** PHP Native + Bootstrap 5 + MySQL
+
+[![Made with PHP](https://img.shields.io/badge/Made%20with-PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Powered by Bootstrap](https://img.shields.io/badge/Powered%20by-Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![Database MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+
+</div>
 # dashboard-toko-kelontong
